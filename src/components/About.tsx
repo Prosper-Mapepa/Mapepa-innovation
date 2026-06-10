@@ -5,7 +5,7 @@ const values = [
     icon: Lightbulb,
     title: "Innovation First",
     description:
-      "We invest in technology that solves real problems — turning bold ideas into products with clear market value.",
+      "We invest in technology that solves real problems, turning bold ideas into products with clear market value.",
   },
   {
     icon: Shield,
@@ -17,7 +17,7 @@ const values = [
     icon: Target,
     title: "User-Centered Design",
     description:
-      "Enterprise-grade engineering meets consumer-grade experience — intuitive, elegant, and built to retain users.",
+      "Enterprise-grade engineering meets consumer-grade experience - intuitive, elegant, and built to retain users.",
   },
   {
     icon: Rocket,
@@ -33,7 +33,7 @@ export default function About() {
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <div className="grid gap-16 lg:grid-cols-2">
           <div>
-            <p className="section-label mb-4">About</p>
+            <p className="section-label mb-4 ">About</p>
             <h2 className="mb-6 text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
               Technology with purpose and vision
             </h2>
@@ -45,7 +45,7 @@ export default function About() {
             </p>
             <p className="body-text">
               Our flagship product, VeriTalent, represents our commitment to
-              solving high-impact problems — with more products and B2B
+              solving high-impact problems - with more products and B2B
               engagements on the horizon.
             </p>
           </div>

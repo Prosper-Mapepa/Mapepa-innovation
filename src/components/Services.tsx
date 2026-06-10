@@ -56,32 +56,44 @@ export default function Services() {
   return (
     <section id="services" className="section-alt py-24 md:py-32">
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
-        <div className="mb-14 max-w-2xl">
-          <p className="section-label mb-4">What We Do</p>
-          <h2 className="mb-5 text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
-            Products &amp; services
-          </h2>
-          <p className="body-text">
-            From our own product portfolio to custom client engagements, we
-            deliver end-to-end technology solutions.
+        <div className="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-xl">
+            <p className="section-label mb-4">What We Do</p>
+            <h2 className="mb-4 text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+              Products &amp; services
+            </h2>
+            <p className="body-text">
+              From our own product portfolio to custom client engagements, we
+              deliver end-to-end technology solutions.
+            </p>
+          </div>
+          <p className="text-sm font-medium text-slate-500 md:pb-1 md:text-right">
+            B2B &amp; B2C · End to end
           </p>
         </div>
 
-        <div className="glass-panel grid gap-px overflow-hidden rounded-xl md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <div key={service.title} className="bg-white/70 p-7 backdrop-blur-sm">
-              <div className="mb-5 flex items-center justify-between">
-                <service.icon
-                  size={22}
-                  className="text-slate-700"
-                  strokeWidth={1.5}
-                />
-                <span className="text-sm text-slate-400">{service.category}</span>
+            <div
+              key={service.title}
+              className="card group flex flex-col p-6 transition-all hover:border-slate-300/80 hover:shadow-md"
+            >
+              <div className="mb-5 flex items-start justify-between gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-100 transition-colors group-hover:bg-accent-50">
+                  <service.icon
+                    size={22}
+                    className="text-slate-700 transition-colors group-hover:text-accent-600"
+                    strokeWidth={1.5}
+                  />
+                </div>
+                <span className="rounded-full border border-slate-200/80 bg-white/60 px-2.5 py-1 text-xs font-medium text-slate-500">
+                  {service.category}
+                </span>
               </div>
               <h3 className="mb-2 text-base font-semibold text-slate-900">
                 {service.title}
               </h3>
-              <p className="text-base leading-relaxed text-slate-600">
+              <p className="mt-auto text-[0.95rem] leading-relaxed text-slate-600">
                 {service.description}
               </p>
             </div>

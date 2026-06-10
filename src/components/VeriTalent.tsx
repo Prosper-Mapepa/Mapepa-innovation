@@ -39,7 +39,7 @@ export default function VeriTalent() {
   return (
     <section id="products" className="py-24 md:py-32">
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
-        <div className="mb-14 max-w-2xl">
+        <div className="mb-16 max-w-2xl">
           <p className="section-label mb-4">Flagship Product</p>
           <h2 className="mb-5 text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
             VeriTalent
@@ -51,15 +51,15 @@ export default function VeriTalent() {
           </p>
         </div>
 
-        <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
-          <div className="flex flex-col items-center lg:items-start">
+        <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
+          {/* Phone demo */}
+          <div className="flex flex-col items-center lg:sticky lg:top-28 lg:items-start">
             <PhoneVideoDemo src="/veritalent/v2.mp4" size="hero" />
-
-            <div className="mt-8 flex flex-wrap justify-center gap-2 lg:justify-start">
+            <div className="mt-8 flex flex-wrap justify-center gap-2 lg:justify-center">
               {platforms.map((platform) => (
                 <span
                   key={platform}
-                  className="rounded-md border border-slate-200 px-3 py-1.5 text-sm text-slate-600"
+                  className="rounded-full border border-slate-200/80 bg-white/60 px-4 py-1.5 text-sm font-medium text-slate-600 backdrop-blur-sm"
                 >
                   {platform}
                 </span>
@@ -67,26 +67,28 @@ export default function VeriTalent() {
             </div>
           </div>
 
-          <div className="space-y-5">
-            {features.map((feature) => (
-              <div key={feature.title} className="flex gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent-50">
+          {/* Features */}
+          <div className="rounded-2xl bg-[#fafaf8]/90 px-6 py-8 backdrop-blur-sm md:px-8 md:py-10">
+            <p className="section-label mb-8">Key capabilities</p>
+            <ul className="divide-y divide-slate-200/70">
+              {features.map((feature) => (
+                <li key={feature.title} className="flex gap-4 py-6 first:pt-0 last:pb-0">
                   <feature.icon
                     size={20}
-                    className="text-accent-600"
+                    className="mt-1 shrink-0 text-accent-600"
                     strokeWidth={1.5}
                   />
-                </div>
-                <div>
-                  <h4 className="mb-1 text-base font-semibold text-slate-900">
-                    {feature.title}
-                  </h4>
-                  <p className="text-base leading-relaxed text-slate-600">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+                  <div>
+                    <h4 className="mb-1.5 font-semibold text-slate-900">
+                      {feature.title}
+                    </h4>
+                    <p className="text-base leading-relaxed text-slate-600">
+                      {feature.description}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

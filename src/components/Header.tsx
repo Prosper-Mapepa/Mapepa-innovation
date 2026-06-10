@@ -7,7 +7,6 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Products", href: "#products" },
   { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" },
 ];
 
 export default function Header() {
@@ -24,12 +23,12 @@ export default function Header() {
     <header
       className={`fixed top-0 right-0 left-0 z-50 transition-all ${
         scrolled
-          ? "border-b border-slate-200/80 bg-white/80 shadow-sm backdrop-blur-xl"
-          : "border-b border-slate-200/50 bg-white/60 backdrop-blur-lg"
+          ? "border-b border-slate-200/80 bg-white/85 shadow-sm backdrop-blur-xl"
+          : "border-b border-slate-200/40 bg-white/70 backdrop-blur-lg"
       }`}
     >
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4 lg:px-8">
-        <a href="#" className="flex items-center gap-3">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-8 px-6 py-4 lg:px-8">
+        <a href="#" className="flex shrink-0 items-center gap-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900 text-sm font-bold text-white">
             M
           </div>
@@ -38,20 +37,23 @@ export default function Header() {
           </span>
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden flex-1 items-center justify-center gap-10 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-base text-slate-600 transition-colors hover:text-slate-900"
+              className="text-[0.95rem] font-medium text-slate-600 transition-colors hover:text-slate-900"
             >
               {link.label}
             </a>
           ))}
-          <a href="#contact" className="btn-primary !px-5 !py-2.5 !text-sm">
-            Contact
-          </a>
         </nav>
+
+        <div className="hidden md:block">
+          <a href="#contact" className="btn-primary !px-5 !py-2.5 !text-sm">
+            Get in Touch
+          </a>
+        </div>
 
         <button
           className="text-slate-800 md:hidden"
@@ -63,13 +65,13 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-slate-200/80 bg-white/90 px-6 py-5 backdrop-blur-xl md:hidden">
-          <nav className="flex flex-col gap-4">
+        <div className="border-t border-slate-200/80 bg-white/95 px-6 py-5 backdrop-blur-xl md:hidden">
+          <nav className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-base text-slate-700"
+                className="rounded-lg px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-50"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -77,10 +79,10 @@ export default function Header() {
             ))}
             <a
               href="#contact"
-              className="btn-primary text-center"
+              className="btn-primary mt-3 text-center"
               onClick={() => setMobileOpen(false)}
             >
-              Contact
+              Get in Touch
             </a>
           </nav>
         </div>

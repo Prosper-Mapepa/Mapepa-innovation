@@ -12,7 +12,7 @@ export default function Hero() {
     <section className="pt-32 pb-20 md:pt-40 md:pb-28">
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="section-label mb-6">Technology · Innovation · Impact</p>
+          <p className="section-label mb-6 text-slate-500 font-bold tracking-wide uppercase ">Technology · Innovation · Impact</p>
 
           <h1 className="mb-7 text-5xl leading-tight font-semibold tracking-tight text-slate-900 md:text-6xl">
             Building software that scales with ambition
@@ -20,7 +20,7 @@ export default function Hero() {
 
           <p className="body-text mx-auto mb-10 max-w-2xl">
             Mapepa Innovation LLC develops B2B and B2C software products and
-            services — engineered for reliability, designed for growth.
+            services - engineered for reliability, designed for growth.
           </p>
 
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
